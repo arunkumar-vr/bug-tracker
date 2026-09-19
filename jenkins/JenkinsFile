@@ -35,15 +35,7 @@
             }
             steps {
                 dir('bugtracker-frontend') {
-                    sh '''
-                        # Set Go cache to a writable location
-                        export GOCACHE="$PWD/.cache/go-build"
-                        export GOMODCACHE="$PWD/.cache/go-mod"
-                        
-                        # Create cache directories
-                        mkdir -p "$GOCACHE" "$GOMODCACHE"
-                        
-                        # Run the tests
+                    sh '''                       
                         npm ci
                         npm test
                     '''
