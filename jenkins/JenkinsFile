@@ -41,6 +41,11 @@
                     '''
                 }
             }
+            post {
+                always {
+                    junit 'bugtracker-frontend/test_results.xml'
+                }
+            }
         }
     }
 }
